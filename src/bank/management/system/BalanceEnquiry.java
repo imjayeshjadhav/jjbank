@@ -20,7 +20,7 @@ public class BalanceEnquiry extends JFrame implements ActionListener{
         add(image);
 
         back = new JButton("Back");
-        back.setBounds(355,520,150,30);
+        back.setBounds(355,490,150,30);
         back.addActionListener(this);
         image.add(back);
 
