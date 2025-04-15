@@ -58,7 +58,6 @@ public class MiniStatement extends JFrame {
                 }
             }
         
-            // Fetch only last 5 transactions
             ResultSet rsLast5 = c.s.executeQuery("SELECT * FROM bank WHERE pin = '"+pinNumber+"' ORDER BY date DESC LIMIT 5");  
             StringBuilder statementText = new StringBuilder("<html>");
         

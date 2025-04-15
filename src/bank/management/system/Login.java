@@ -1,7 +1,6 @@
 package bank.management.system;
 import java.awt.*;
 import java.awt.event.*;
-import javax.naming.spi.DirStateFactory;
 import javax.swing.*;
 import java.sql.*;
 
@@ -93,7 +92,7 @@ public class Login extends JFrame implements ActionListener {
                     new Transaction(pinNumber).setVisible(true);
                 }
                 else{
-                    JOptionPane.showConfirmDialog(null, "Incorrect card Number of pin");
+                    JOptionPane.showConfirmDialog(null, "Incorrect card Number or pin");
                 }
             } catch (Exception e) {
                 System.out.println(e);

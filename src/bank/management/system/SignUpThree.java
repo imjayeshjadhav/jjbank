@@ -261,7 +261,7 @@ public class SignUpThree extends JFrame implements ActionListener{
 
                     setVisible(false);
                     new Deposite(pin).setVisible(false);
-                    
+                    new Login().setVisible(true);
                 }
             
             }else if(ae.getSource()==b2){
