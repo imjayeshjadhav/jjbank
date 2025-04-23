@@ -1,9 +1,9 @@
 package bank.management.system;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 import java.util.Date;
+import javax.swing.*;
 
 public class Withdraw extends JFrame implements ActionListener{
 
@@ -63,6 +63,7 @@ public class Withdraw extends JFrame implements ActionListener{
             else{
 
                 try {
+                    
                     Conn c = new Conn();
                     ResultSet rs= c.s.executeQuery("select * from bank where pin= '"+pinNumber+"'");
                     int balance=0;

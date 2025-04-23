@@ -4,7 +4,6 @@ package bank.management.system;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.sql.*;
 
 public class SignUpTwo extends JFrame implements ActionListener{
     
@@ -226,6 +225,26 @@ public class SignUpTwo extends JFrame implements ActionListener{
         }
         
         try{
+            if(!pan.matches("[A-Z]{5}[0-9]{4}[A-Z]")){
+                JOptionPane.showMessageDialog(null, "Invalid PAN number. Format should be: ABCDE1234F");
+                return;
+            }
+    
+            if(!aadhar.matches("\\d{12}")){
+                JOptionPane.showMessageDialog(null, "Invalid Aadhar number. It should be a 12-digit numeric value.");
+                return;
+            }
+    
+            if(scitizen.equals("")){
+                JOptionPane.showMessageDialog(null, "Please select Senior Citizen option.");
+                return;
+            }
+    
+            if(eaccount.equals("")){
+                JOptionPane.showMessageDialog(null, "Please select Existing Account option.");
+                return;
+            }
+    
             if(t2.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Fill all the required fields");
             }else{

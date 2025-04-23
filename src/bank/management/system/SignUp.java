@@ -250,12 +250,50 @@ public class SignUp extends JFrame implements ActionListener{
         String pincode = t6.getText();
         String state = t7.getText();
         
-
         try{
            
-            if(t6.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Fill all the required fields");
-            }else{
+            if (name.equals("") || fname.equals("") || dob.equals("") || gender == null || 
+            email.equals("") || marital == null || address.equals("") || city.equals("") || 
+            pincode.equals("") || state.equals("")) {
+            JOptionPane.showMessageDialog(null, "Fill all the required fields");
+            return;
+                }
+
+                if (!name.matches("^[A-Za-z\\s]+$")) {
+                    JOptionPane.showMessageDialog(null, "Enter a valid Name");
+                    return;
+                }
+
+                if (!fname.matches("^[A-Za-z\\s]+$")) {
+                    JOptionPane.showMessageDialog(null, "Enter a valid Father's Name");
+                    return;
+                }
+
+                if (!email.matches("^[\\w.-]+@[\\w.-]+\\.[A-Za-z]{2,6}$")) {
+                    JOptionPane.showMessageDialog(null, "Enter a valid Email Address");
+                    return;
+                }
+
+                if (!address.matches("^[A-Za-z0-9 ,.-]+$")) {
+                    JOptionPane.showMessageDialog(null, "Enter a valid Address");
+                    return;
+                }
+
+                if (!city.matches("^[A-Za-z\\s]+$")) {
+                    JOptionPane.showMessageDialog(null, "Enter a valid City");
+                    return;
+                }
+
+                if (!pincode.matches("^[1-9][0-9]{5}$")) {
+                    JOptionPane.showMessageDialog(null, "Enter a valid 6-digit Pin Code");
+                    return;
+                }
+
+                if (!state.matches("^[A-Za-z\\s]+$")) {
+                    JOptionPane.showMessageDialog(null, "Enter a valid State");
+                    return;
+                }
+                else{
                 Conn c1 = new Conn();
                 String q1 = "insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pincode+"','"+state+"')";
                 c1.s.executeUpdate(q1);
